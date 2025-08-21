@@ -43,7 +43,7 @@ Scanner input = new Scanner(System.in);
 	1. Add item
 	2. Remove item
 	3. Show an item
-	0. Exit
+	0. Exit 
 		""";
 	System.out.println(items);
 		}

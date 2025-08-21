@@ -1,12 +1,20 @@
 new_grocery_list = []
 def add_grocery_item(item):
+	if type(item) == int:
+		raise ValueError
+	if item == "":
+		raise ValueError
 	new_grocery_list.append(item)
-	return 'Item added successfully'
+	return 'Item added successfully!'
 		
 def remove_grocery_item(item):
+	if type(item) == int:
+		raise ValueError
+	if item == "":
+		raise ValueError
 	new_grocery_list.remove(item)
-	return 'Item removed successfully'
-        
+	return 'Item removed successfully!'
+     
 def show_items():
 	print(new_grocery_list)
 	
@@ -18,25 +26,3 @@ def show_menu_item():
 	0. Exit
 		"""
 	print(items)
-def main():
-    while True:
-        show_menu_item()
-        user_input = int(input("Choose an option: "))
-        if user_input == 1:
-            item = input("Add item here: ")
-            print(add_grocery_item(item))
-        elif user_input == 2:
-            item = input("Remove item here: ")
-            print(remove_grocery_item(item))
-        elif user_input == 3:
-            show_items()
-        elif user_input == 0:
-            print("Thank you, bye!")
-            break
-        else:
-            print("Invalid input")
-		
-main()
-	
-	
-	
