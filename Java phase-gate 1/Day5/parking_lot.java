@@ -1,3 +1,5 @@
+/*Since we are using 0 to remove cars and 1 to park cars,create array with 20 0's and crrate your remove and park functions*/
+
 import java.util.Scanner;
 import java.util.ArrayList;
 public class parking_lot{

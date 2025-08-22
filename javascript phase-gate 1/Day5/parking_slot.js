@@ -1,5 +1,7 @@
+/*Since we are using 0 to remove cars and 1 to park cars,create array with 20 0's and crrate your remove and park functions*/
+
 var prompt = require('prompt-sync')();
-parking_slot_list = []
+parking_slot_list = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 function parkingLotDisplay(){
 		parkingDisplay = `
 		Welcome to the Parking lot!!!
@@ -10,13 +12,18 @@ function parkingLotDisplay(){
 			`;
 			console.log(parkingDisplay)}
 			
-function parkCar(car){
-	parking_slot_list.push(car)
+function parkCar(){
+	for(let car_index = 0; car_index < parking_slot_list.length; car_index++){
+		if (parking_slot_list[car_index] == 0){
+		parking_slot_list[car_index]= 1
+	}
 	return "Car parked!"}
 	
 function leaveCarPark(car){
-	parking_slot_list.push(car)
+	if (parking_slot_list[car] == 1){
+		parking_slot_list[car] = 0
 	return "Car removed"}
+	}
 	
 function displayCarStatus(){
 	return parking_slot_list
@@ -32,7 +39,7 @@ function displayCarStatus(){
 			if(car_to_park != 1){
 				console.log("Invalid,Press 1 to park!")}
 			else
-				console.log(parkCar(car_to_park))
+				console.log(parkCar())
 				console.log(displayCarStatus())}
 	else if(user_input == 2){
 		var car_to_remove = prompt("Press 0 to remove your car here: ")
